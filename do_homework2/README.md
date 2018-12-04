@@ -7,3 +7,7 @@
 ```powershell
 homework2_person -sen_id 1 -filepath test.csv -outfile out.json
 ```
+
+- sen_id 你负责的sen_id
+- filepath csv文件
+- outfile 输出文件

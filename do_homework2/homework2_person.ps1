@@ -12,7 +12,7 @@ param(
 $json=@{}
 $json.sentences=@()
 
-Get-Content $filepath | ConvertFrom-Csv | ForEach-Object {
+Get-Content $filepath -Encoding UTF8 | ConvertFrom-Csv | ForEach-Object {
     $item=@{}
     $item.caption=$_.caption
     $item.video_id="video_{0}" -f ($_.video_id)
@@ -20,4 +20,4 @@ Get-Content $filepath | ConvertFrom-Csv | ForEach-Object {
     $json.sentences+=$item
 }
 
-$json | ConvertTo-Json | Out-File $outfile
+$json | ConvertTo-Json | Out-File $outfile -Encoding utf8
